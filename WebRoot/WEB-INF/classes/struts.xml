@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 用户 -->
+	<package name="yonghu" extends="struts-default" namespace="/">
+		<action name="LoginAction" class="com.wang.action.YonghuAction"
+			method="login">
+			<result name="loginFalse">/login.jsp</result>
+			<result name="manageLogin">/index.jsp</result>
+			<result name="userLogin">/main.jsp</result>
+		</action>
+		<action name="ComLoginAction" class="com.wang.action.YonghuAction"
+			method="comlogin">
+			<result name="loginFalse">/main.jsp</result>
+			<result name="comLogin">/main.jsp</result>
+		</action>
+		<action name="yonghuAddAction" class="com.wang.action.YonghuAction"
+			method="add">
+			<result name="yonghuAddSuccess">/yonghu/yonghulist.jsp</result>
+			<result name="yonghuAddFail">/yonghu/yonghuadd.jsp</result>
+		</action>
+		<action name="yonghudeleteAction" class="com.wang.action.YonghuAction"
+			method="delet">
+			<result name="yonghuDeletSuccess">/yonghu/yonghulist.jsp</result>
+			<result name="yonghuDeletFail">/yonghu/yonghuadd.jsp</result>
+		</action>
+		<action name="yonghuUpdateAction" class="com.wang.action.YonghuAction"
+			method="update">
+			<result name="yonghuUpdate">/yonghu/yonghuupdate.jsp</result>
+		</action>
+		<action name="yonghuUpdateSuccessAction" class="com.wang.action.YonghuAction"
+			method="update">
+			<result name="yonghuUpdate">/yonghu/yonghulist.jsp</result>
+		</action>
+		<action name="yonghuDetailAction" class="com.wang.action.YonghuAction"
+			method="select">
+			<result name="yonghuDetail">/yonghu/yonghudetail.jsp</result>
+		</action>
+		<action name="yonghuSelectAllAction" class="com.wang.action.YonghuAction"
+			method="selectAll">
+			<result name="yonghuSelectAll">/yonghu/yonghulist.jsp</result>
+		</action>
+		<action name="yonghuRegAction" class="com.wang.action.YonghuAction"
+			method="reg">
+			<result name="yonghuRegSuccess">/main.jsp</result>
+			<result name="yonghuRegFail">/reg.jsp</result>
+		</action>
+	</package>
+	<!-- 权限 -->
+	<package name="quanxian" extends="struts-default" namespace="/">
+		<action name="quanxianAddAction" class="com.wang.action.QuanxianAction"
+			method="add">
+			<result name="quanxianAddSuccess">/quanxian/quanxianlist.jsp</result>
+			<result name="quanxianAddFail">/quanxian/quanxianadd.jsp</result>
+		</action>
+		<action name="quanxiandeleteAction" class="com.wang.action.QuanxianAction"
+			method="delet">
+			<result name="quanxianDeletSuccess">/quanxian/quanxianlist.jsp</result>
+			<result name="quanxianDeletFail">/quanxian/quanxianadd.jsp</result>
+		</action>
+		<action name="quanxianUpdateAction" class="com.wang.action.QuanxianAction"
+			method="update">
+			<result name="quanxianUpdate">/quanxian/quanxianupdate.jsp</result>
+		</action>
+		<action name="quanxianUpdateSuccessAction" class="com.wang.action.QuanxianAction"
+			method="updateSuccess">
+			<result name="quanxianUpdateFail">/quanxian/quanxianupdate.jsp</result>
+			<result name="quanxianUpdateSuccess">/quanxian/quanxianlist.jsp</result>
+		</action>
+		<action name="quanxianDetailAction" class="com.wang.action.QuanxianAction"
+			method="select">
+			<result name="quanxianDetail">/quanxian/quanxiandetail.jsp</result>
+		</action>
+		<action name="quanxianSelectAllAction" class="com.wang.action.QuanxianAction"
+			method="selectAll">
+			<result name="quanxianSelectAll">/quanxian/quanxianlist.jsp</result>
+		</action>
+	</package>
+	<!-- 课程 -->
+	<package name="kecheng" extends="struts-default" namespace="/">
+		<action name="kechengAddAction" class="com.wang.action.KechengAction"
+			method="add">
+			<result name="kechengAddSuccess">/kecheng/kechenglist.jsp</result>
+			<result name="kechengAddFail">/kecheng/kechengadd.jsp</result>
+		</action>
+		<action name="kechengdeleteAction" class="com.wang.action.KechengAction"
+			method="delet">
+			<result name="kechengDeletSuccess">/kecheng/kechenglist.jsp</result>
+			<result name="kechengDeletFail">/kecheng/kechengadd.jsp</result>
+		</action>
+		<action name="kechengUpdateAction" class="com.wang.action.KechengAction"
+			method="update">
+			<result name="kechengUpdate">/kecheng/kechengupdate.jsp</result>
+		</action>
+		<action name="kechengUpdateSuccessAction" class="com.wang.action.KechengAction"
+			method="updateSuccess">
+			<result name="kechengUpdateFail">/kecheng/kechengupdate.jsp</result>
+			<result name="kechengUpdateSuccess">/kecheng/kechenglist.jsp</result>
+		</action>
+		<action name="kechengDetailAction" class="com.wang.action.KechengAction"
+			method="select">
+			<result name="kechengDetail">/kecheng/kechengdetail.jsp</result>
+		</action>
+		<action name="kechengSelectAllAction" class="com.wang.action.KechengAction"
+			method="selectAll">
+			<result name="kechengSelectAll">/kecheng/kechenglist.jsp</result>
+		</action>
+	</package>
+	<!-- 教学内容 -->
+	<package name="jxnr" extends="struts-default" namespace="/">
+		<action name="jxnrAddAction" class="com.wang.action.JxnrAction"
+			method="add">
+			<result name="jxnrAddSuccess">/jxnr/jxnrlist.jsp</result>
+			<result name="jxnrAddFail">/jxnr/jxnradd.jsp</result>
+		</action>
+		<action name="jxnrdeleteAction" class="com.wang.action.JxnrAction"
+			method="delet">
+			<result name="jxnrDeletSuccess">/jxnr/jxnrlist.jsp</result>
+			<result name="jxnrDeletFail">/jxnr/jxnradd.jsp</result>
+		</action>
+		<action name="jxnrUpdateAction" class="com.wang.action.JxnrAction"
+			method="update">
+			<result name="jxnrUpdate">/jxnr/jxnrupdate.jsp</result>
+		</action>
+		<action name="jxnrUpdateSuccessAction" class="com.wang.action.JxnrAction"
+			method="updateSuccess">
+			<result name="jxnrUpdateFail">/jxnr/jxnrupdate.jsp</result>
+			<result name="jxnrUpdateSuccess">/jxnr/jxnrlist.jsp</result>
+		</action>
+		<action name="jxnrDetailAction" class="com.wang.action.JxnrAction"
+			method="select">
+			<result name="jxnrDetail">/jxnr/jxnrdetail.jsp</result>
+		</action>
+		<action name="jxnrSelectAllAction" class="com.wang.action.JxnrAction"
+			method="selectAll">
+			<result name="jxnrSelectAll">/jxnr/jxnrlist.jsp</result>
+		</action>
+	</package>
+	<!-- 试题 -->
+	<package name="shiti" extends="struts-default" namespace="/">
+		<action name="shitiAddAction" class="com.wang.action.ShitiAction"
+			method="add">
+			<result name="shitiAddSuccess">/shiti/shitilist.jsp</result>
+			<result name="shitiAddFail">/shiti/shitiadd.jsp</result>
+		</action>
+		<action name="shitideleteAction" class="com.wang.action.ShitiAction"
+			method="delet">
+			<result name="shitiDeletSuccess">/shiti/shitilist.jsp</result>
+			<result name="shitiDeletFail">/shiti/shitiadd.jsp</result>
+		</action>
+		<action name="shitiUpdateAction" class="com.wang.action.ShitiAction"
+			method="update">
+			<result name="shitiUpdate">/shiti/shitiupdate.jsp</result>
+		</action>
+		<action name="shitiUpdateSuccessAction" class="com.wang.action.ShitiAction"
+			method="updateSuccess">
+			<result name="shitiUpdateFail">/shiti/shitiupdate.jsp</result>
+			<result name="shitiUpdateSuccess">/shiti/shitilist.jsp</result>
+		</action>
+		<action name="shitiDetailAction" class="com.wang.action.ShitiAction"
+			method="select">
+			<result name="shitiDetail">/shiti/shitidetail.jsp</result>
+		</action>
+		<action name="shitiSelectAllAction" class="com.wang.action.ShitiAction"
+			method="selectAll">
+			<result name="shitiSelectAll">/shiti/shitilist.jsp</result>
+		</action>
+	</package>
+	<!-- 试卷 -->
+	<package name="shijuan" extends="struts-default" namespace="/">
+		<action name="shijuanAddAction" class="com.wang.action.ShijuanAction"
+			method="add">
+			<result name="shijuanAddSuccess">/shijuan/shijuanlist.jsp</result>
+			<result name="shijuanAddFail">/shijuan/shijuanadd.jsp</result>
+		</action>
+		<action name="shijuandeleteAction" class="com.wang.action.ShijuanAction"
+			method="delet">
+			<result name="shijuanDeletSuccess">/shijuan/shijuanlist.jsp</result>
+			<result name="shijuanDeletFail">/shijuan/shijuanadd.jsp</result>
+		</action>
+		<action name="shijuanUpdateAction" class="com.wang.action.ShijuanAction"
+			method="update">
+			<result name="shijuanUpdate">/shijuan/shijuanupdate.jsp</result>
+		</action>
+		<action name="shijuanUpdateSuccessAction" class="com.wang.action.ShijuanAction"
+			method="updateSuccess">
+			<result name="shijuanUpdateFail">/shijuan/shijuanupdate.jsp</result>
+			<result name="shijuanUpdateSuccess">/shijuan/shijuanlist.jsp</result>
+		</action>
+		<action name="shijuanDetailAction" class="com.wang.action.ShijuanAction"
+			method="select">
+			<result name="shijuanDetail">/shijuan/shijuandetail.jsp</result>
+		</action>
+		<action name="shijuanSelectAllAction" class="com.wang.action.ShijuanAction"
+			method="selectAll">
+			<result name="shijuanSelectAll">/shijuan/shijuanlist.jsp</result>
+		</action>
+	</package>
+	<!-- 卷 -->
+	<package name="juan" extends="struts-default" namespace="/">
+		<action name="juanAddAction" class="com.wang.action.JuanAction"
+			method="add">
+			<result name="juanAddSuccess">/juan/juanlist.jsp</result>
+			<result name="juanAddFail">/juan/juanadd.jsp</result>
+		</action>
+		<action name="juandeleteAction" class="com.wang.action.JuanAction"
+			method="delet">
+			<result name="juanDeletSuccess">/juan/juanlist.jsp</result>
+			<result name="juanDeletFail">/juan/juanadd.jsp</result>
+		</action>
+		<action name="juanUpdateAction" class="com.wang.action.JuanAction"
+			method="update">
+			<result name="juanUpdate">/juan/juanupdate.jsp</result>
+		</action>
+		<action name="juanUpdateSuccessAction" class="com.wang.action.JuanAction"
+			method="updateSuccess">
+			<result name="juanUpdateFail">/juan/juanupdate.jsp</result>
+			<result name="juanUpdateSuccess">/juan/juanlist.jsp</result>
+		</action>
+		<action name="juanDetailAction" class="com.wang.action.JuanAction"
+			method="select">
+			<result name="juanDetail">/juan/juandetail.jsp</result>
+		</action>
+		<action name="juanSelectAllAction" class="com.wang.action.JuanAction"
+			method="selectAll">
+			<result name="juanSelectAll">/juan/juanlist.jsp</result>
+		</action>
+	</package>
+	<!-- 成绩 -->
+	<package name="chengji" extends="struts-default" namespace="/">
+		<action name="chengjiAddAction" class="com.wang.action.ChengjiAction"
+			method="add">
+			<result name="chengjiAddSuccess">/chengji/chengjilist.jsp</result>
+			<result name="chengjiAddFail">/chengji/chengjiadd.jsp</result>
+		</action>
+		<action name="chengjideleteAction" class="com.wang.action.ChengjiAction"
+			method="delet">
+			<result name="chengjiDeletSuccess">/chengji/chengjilist.jsp</result>
+			<result name="chengjiDeletFail">/chengji/chengjiadd.jsp</result>
+		</action>
+		<action name="chengjiUpdateAction" class="com.wang.action.ChengjiAction"
+			method="update">
+			<result name="chengjiUpdate">/chengji/chengjiupdate.jsp</result>
+		</action>
+		<action name="chengjiUpdateSuccessAction" class="com.wang.action.ChengjiAction"
+			method="updateSuccess">
+			<result name="chengjiUpdateFail">/chengji/chengjiupdate.jsp</result>
+			<result name="chengjiUpdateSuccess">/chengji/chengjilist.jsp</result>
+		</action>
+		<action name="chengjiDetailAction" class="com.wang.action.ChengjiAction"
+			method="select">
+			<result name="chengjiDetail">/chengji/chengjidetail.jsp</result>
+		</action>
+		<action name="chengjiSelectAllAction" class="com.wang.action.ChengjiAction"
+			method="selectAll">
+			<result name="chengjiSelectAll">/chengji/chengjilist.jsp</result>
+		</action>
+	</package>
+	<!-- 答题 -->
+	<package name="dati" extends="struts-default" namespace="/">
+		<action name="datiAddAction" class="com.wang.action.DatiAction"
+			method="add">
+			<result name="datiAddSuccess">/dati/datilist.jsp</result>
+			<result name="datiAddFail">/dati/datiadd.jsp</result>
+		</action>
+		<action name="datideleteAction" class="com.wang.action.DatiAction"
+			method="delet">
+			<result name="datiDeletSuccess">/dati/datilist.jsp</result>
+			<result name="datiDeletFail">/dati/datiadd.jsp</result>
+		</action>
+		<action name="datiUpdateAction" class="com.wang.action.DatiAction"
+			method="update">
+			<result name="datiUpdate">/dati/datiupdate.jsp</result>
+		</action>
+		<action name="datiUpdateSuccessAction" class="com.wang.action.DatiAction"
+			method="updateSuccess">
+			<result name="datiUpdateFail">/dati/datiupdate.jsp</result>
+			<result name="datiUpdateSuccess">/dati/datilist.jsp</result>
+		</action>
+		<action name="datiDetailAction" class="com.wang.action.DatiAction"
+			method="select">
+			<result name="datiDetail">/dati/datidetail.jsp</result>
+		</action>
+		<action name="datiSelectAllAction" class="com.wang.action.DatiAction"
+			method="selectAll">
+			<result name="datiSelectAll">/dati/datilist.jsp</result>
+		</action>
+	</package>
+	<!-- 公告 -->
+	<package name="gonggao" extends="struts-default" namespace="/">
+		<action name="gonggaoAddAction" class="com.wang.action.GonggaoAction"
+			method="add">
+			<result name="gonggaoAddSuccess">/gonggao/gonggaolist.jsp</result>
+			<result name="gonggaoAddFail">/gonggao/gonggaoadd.jsp</result>
+		</action>
+		<action name="gonggaodeleteAction" class="com.wang.action.GonggaoAction"
+			method="delet">
+			<result name="gonggaoDeletSuccess">/gonggao/gonggaolist.jsp</result>
+			<result name="gonggaoDeletFail">/gonggao/gonggaoadd.jsp</result>
+		</action>
+		<action name="gonggaoUpdateAction" class="com.wang.action.GonggaoAction"
+			method="update">
+			<result name="gonggaoUpdate">/gonggao/gonggaoupdate.jsp</result>
+		</action>
+		<action name="gonggaoUpdateSuccessAction" class="com.wang.action.GonggaoAction"
+			method="updateSuccess">
+			<result name="gonggaoUpdateFail">/gonggao/gonggaoupdate.jsp</result>
+			<result name="gonggaoUpdateSuccess">/gonggao/gonggaolist.jsp</result>
+		</action>
+		<action name="gonggaoDetailAction" class="com.wang.action.GonggaoAction"
+			method="select">
+			<result name="gonggaoDetail">/gonggao/gonggaodetail.jsp</result>
+		</action>
+		<action name="gonggaoSelectAllAction" class="com.wang.action.GonggaoAction"
+			method="selectAll">
+			<result name="gonggaoSelectAll">/gonggao/gonggaolist.jsp</result>
+		</action>
+	</package>
+	<!-- 主页 -->
+	<package name="main" extends="struts-default" namespace="/">
+
+		<action name="mainAction" class="com.wang.action.MainAction"
+			method="main">
+			<result name="mainAction">/main.jsp</result>
+		</action>
+
+		<action name="ggAction" class="com.wang.action.MainAction"
+			method="gonggao">
+			<result name="ggAction">/agonggao.jsp</result>
+		</action>
+
+		<action name="kcAction" class="com.wang.action.MainAction"
+			method="kecheng">
+			<result name="kcAction">/akecheng.jsp</result>
+		</action>
+
+		<action name="jxnrAction" class="com.wang.action.MainAction"
+			method="jxnr">
+			<result name="jxnrAction">/ajxnr.jsp</result>
+		</action>
+
+		<action name="juanAction" class="com.wang.action.MainAction"
+			method="juan">
+			<result name="juanAction">/test.jsp</result>
+		</action>
+	</package>
+</struts>    

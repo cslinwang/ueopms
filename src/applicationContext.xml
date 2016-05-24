@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/ueopms?useSSL=false">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="mysql"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/wang/model/Juan.hbm.xml</value>
+				<value>com/wang/model/Jxnr.hbm.xml</value>
+				<value>com/wang/model/Yonghu.hbm.xml</value>
+				<value>com/wang/model/Kecheng.hbm.xml</value>
+				<value>com/wang/model/Shiti.hbm.xml</value>
+				<value>com/wang/model/Dati.hbm.xml</value>
+				<value>com/wang/model/Shijuan.hbm.xml</value>
+				<value>com/wang/model/Chengji.hbm.xml</value>
+				<value>com/wang/model/Quanxian.hbm.xml</value>
+				<value>com/wang/model/Gonggao.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- 用户 -->
+	<bean id="yonghuDaoImp" class="com.wang.dao.YonghuDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate">
+		</property>
+	</bean>
+	<bean id="yonghuServiceImp" class="com.wang.service.YonghuServiceImp">
+		<property name="daoImp">
+			<ref bean="yonghuDaoImp" />
+		</property>
+	</bean>
+	<!-- 权限 -->
+	<bean id="quanxianDaoImp" class="com.wang.dao.QuanxianDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate">
+		</property>
+	</bean>
+	<bean id="quanxianServiceImp" class="com.wang.service.QuanxianServiceImp">
+		<property name="daoImp">
+			<ref bean="quanxianDaoImp" />
+		</property>
+	</bean>
+	<!-- 课程 -->
+	<bean id="kechengDaoImp" class="com.wang.dao.KechengDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate">
+		</property>
+	</bean>
+	<bean id="kechengServiceImp" class="com.wang.service.KechengServiceImp">
+		<property name="daoImp">
+			<ref bean="kechengDaoImp" />
+		</property>
+	</bean>
+	<!-- 教学内容 -->
+	<bean id="jxnrDaoImp" class="com.wang.dao.JxnrDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate">
+		</property>
+	</bean>
+	<bean id="jxnrServiceImp" class="com.wang.service.JxnrServiceImp">
+		<property name="daoImp">
+			<ref bean="jxnrDaoImp" />
+		</property>
+	</bean>
+	<!-- 试题 -->
+	<bean id="shitiDaoImp" class="com.wang.dao.ShitiDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate">
+		</property>
+	</bean>
+	<bean id="shitiServiceImp" class="com.wang.service.ShitiServiceImp">
+		<property name="daoImp">
+			<ref bean="shitiDaoImp" />
+		</property>
+	</bean>
+	<!-- 试卷 -->
+	<bean id="shijuanDaoImp" class="com.wang.dao.ShijuanDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate">
+		</property>
+	</bean>
+	<bean id="shijuanServiceImp" class="com.wang.service.ShijuanServiceImp">
+		<property name="daoImp">
+			<ref bean="shijuanDaoImp" />
+		</property>
+	</bean>
+	<!-- 卷 -->
+	<bean id="juanDaoImp" class="com.wang.dao.JuanDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate">
+		</property>
+	</bean>
+	<bean id="juanServiceImp" class="com.wang.service.JuanServiceImp">
+		<property name="daoImp">
+			<ref bean="juanDaoImp" />
+		</property>
+	</bean>
+	<!-- 成绩 -->
+	<bean id="chengjiDaoImp" class="com.wang.dao.ChengjiDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate">
+		</property>
+	</bean>
+	<bean id="chengjiServiceImp" class="com.wang.service.ChengjiServiceImp">
+		<property name="daoImp">
+			<ref bean="chengjiDaoImp" />
+		</property>
+	</bean>
+	<!-- 答题 -->
+	<bean id="datiDaoImp" class="com.wang.dao.DatiDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate">
+		</property>
+	</bean>
+	<bean id="datiServiceImp" class="com.wang.service.DatiServiceImp">
+		<property name="daoImp">
+			<ref bean="datiDaoImp" />
+		</property>
+	</bean>
+	<!-- 公告 -->
+	<bean id="gonggaoDaoImp" class="com.wang.dao.GonggaoDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate">
+		</property>
+	</bean>
+	<bean id="gonggaoServiceImp" class="com.wang.service.GonggaoServiceImp">
+		<property name="daoImp">
+			<ref bean="gonggaoDaoImp" />
+		</property>
+	</bean>
+	<!-- 主页 -->
+	<bean id="mainDaoImp" class="com.wang.dao.MainDaoImp">
+		<property name="hibernateTemplate" ref="hibernateTemplate">
+		</property>
+	</bean>
+	<bean id="mainServiceImp" class="com.wang.service.MainServiceImp">
+		<property name="daoImp">
+			<ref bean="mainDaoImp" />
+		</property>
+	</bean>
+</beans>
